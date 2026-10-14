@@ -1,0 +1,101 @@
+{
+  "snapshot_id": "sha256:943faef3b59ca780ff18fb9cf55a2a2f040b79b14371e4c89d5b04576ac2fa7d",
+  "format_version": 1,
+  "enola_version": "0.4.21",
+  "extractor_version": "v270",
+  "generated_at": "2026-10-08T15:02:57Z",
+  "duration": "2.1590722s",
+  "repo_path": "C:\\Users\\user\\OneDrive\\Desktop\\Elogix",
+  "git": {
+    "ref": "main",
+    "commit": "faa2b30a1bfd0c63a17f2e50884210d230228ce4",
+    "dirty": false,
+    "remote": "github.com/young-architects/elogix"
+  },
+  "extractors": [
+    "manifests",
+    "mdintent",
+    "php",
+    "typescript"
+  ],
+  "explainers": [
+    "cycles",
+    "layers",
+    "crossrepo",
+    "coverage",
+    "unused-routes",
+    "domain",
+    "query-loops",
+    "dead-methods",
+    "entry-points",
+    "messaging-coverage",
+    "god-class",
+    "hotspots",
+    "dependency-depth",
+    "exported-surface",
+    "complexity-outliers",
+    "intent",
+    "constraints",
+    "vendored-candidates",
+    "import-closure",
+    "package-metrics",
+    "dead-code",
+    "performance"
+  ],
+  "renderers": [
+    "llm_context"
+  ],
+  "config_hash": "sha256:73d78ea79f51e19979d4c7d00bd9463ae684ebcb909116abad86675323c32c05",
+  "ignore_glob_hash": "sha256:7523cc6397a498e151125a682d28fbf6df20c6f51f6dfaf18fd8f5239a20d2d8",
+  "output_hashes": {
+    "facts.jsonl": "sha256:fd42a294e0c0ffc5ef3ae273d57af1fa44a1de06df544c06910fd1b02913c7fa",
+    "insights.json": "sha256:555fc85d7e7db3f6caa5ec795fb069d912e2529006c670e5d0d34488a01644d8",
+    "llm_context.md": "sha256:3a3fd14c9cf400af7b5eb108d9f7fd1f98543f91c9afde81ad0d5df62aebe55d"
+  },
+  "fact_count": 1493,
+  "insight_count": 46,
+  "quality": {
+    "files_seen": 213,
+    "files_parsed": 149,
+    "files_skipped": 0,
+    "dirs_skipped": 3,
+    "skipped_sample": [
+      ".git/ (glob: **/.git/**)",
+      ".next/ (glob: .next/**)",
+      "node_modules/ (glob: **/node_modules/**)"
+    ],
+    "parse_errors": 0,
+    "heuristic_insights": 45,
+    "coverage": {
+      "services_total": 0,
+      "coverage_gaps": 0,
+      "unresolved_edges": 0,
+      "extractors_reporting": 1,
+      "extraction_unresolved": 153
+    },
+    "census": {
+      "files_walked": 213,
+      "parsed": 149,
+      "excluded_by_ignore": 0,
+      "excluded_by_kind": 63,
+      "excluded_kinds": {
+        ".css": 1,
+        ".gitignore": 1,
+        ".ico": 1,
+        ".jpg": 1,
+        ".json": 39,
+        ".npmrc": 1,
+        ".pdf": 4,
+        ".png": 14,
+        ".tsbuildinfo": 1
+      },
+      "skipped_with_cause": 1,
+      "top_skip_causes": [
+        {
+          "cause": "claimed by manifests, no facts emitted",
+          "count": 1
+        }
+      ]
+    }
+  }
+}

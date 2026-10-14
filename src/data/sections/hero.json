@@ -1,0 +1,73 @@
+{
+  "badge": {
+    "text": "AI-Powered Expense & Reimbursement Management Platform",
+    "tag": "New"
+  },
+  "headline": "Control Every Business Expense Without the Spreadsheet Chaos.",
+  "headlineParts": {
+    "pre": "Take Control of Every Business",
+    "accent": "Expense",
+    "post": "Without the Spreadsheet Chaos."
+  },
+  "description": "Expendesk helps SMEs and Mid-Market Businesses automate expense tracking, employee reimbursements, approvals, policy compliance, and spend visibility—so your finance team spends less time processing expenses and more time driving growth.",
+  "highlightText": "",
+  "subDescription": "",
+  "trustPills": [
+    { "iconKey": "shield-check", "label": "SOC 2 Ready"       },
+    { "iconKey": "zap",          "label": "Real-time Alerts"  },
+    { "iconKey": "eye",          "label": "Full Audit Trail"  }
+  ],
+  "ctas": {
+    "primary":   { "label": "Book a Free Demo", "href": "/book-a-demo"  },
+    "secondary": { "label": "Download the Free Expense Management Guide",    "href": "/downloads/msme-lead-magnet.pdf" }
+  },
+  "stats": [
+    { "value": 94, "suffix": "%",        "label": "Faster closures" },
+    { "value": 3,  "suffix": "×",        "label": "Audit speed"     },
+    { "value": 0,  "suffix": " leakage", "label": "With auto-flags" }
+  ],
+  "featureCards": [
+    {
+      "iconKey": "zap",
+      "gradientColor": "from-amber-500/10 to-orange-500/10",
+      "iconColor": "text-amber-600",
+      "borderHover": "hover:border-amber-500/20",
+      "title": "Faster Employee Reimbursements"
+    },
+    {
+      "iconKey": "git-branch",
+      "gradientColor": "from-violet-500/10 to-purple-500/10",
+      "iconColor": "text-violet-600",
+      "borderHover": "hover:border-violet-500/20",
+      "title": "Automated Approval Workflows"
+    },
+    {
+      "iconKey": "eye",
+      "gradientColor": "from-indigo-500/10 to-blue-500/10",
+      "iconColor": "text-indigo-600",
+      "borderHover": "hover:border-indigo-500/20",
+      "title": "Real-Time Spend Visibility"
+    },
+    {
+      "iconKey": "shield-check",
+      "gradientColor": "from-emerald-500/10 to-teal-500/10",
+      "iconColor": "text-emerald-600",
+      "borderHover": "hover:border-emerald-500/20",
+      "title": "Expense Policy Compliance"
+    },
+    {
+      "iconKey": "trending-up",
+      "gradientColor": "from-fuchsia-500/10 to-pink-500/10",
+      "iconColor": "text-fuchsia-600",
+      "borderHover": "hover:border-fuchsia-500/20",
+      "title": "Built for Growing Businesses"
+    }
+  ],
+  "socialProof": {
+    "businessCount": "20+",
+    "businessText": "finance teams trust Expendesk",
+    "rating": 4.9,
+    "ratingText": "from early teams",
+    "avatarInitials": ["SM", "AK", "RD", "PJ"]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "sectionLabel": "The Problem",
+  "headline": {
+    "line1": "Business Growth Shouldn't",
+    "line2": "Create",
+    "accent": "Expense Chaos."
+  },
+  "description": "As your business grows, so do your operational expenses.",
+  "escalation": [
+    "More employees",
+    "More reimbursements",
+    "More approvals",
+    "More spreadsheets",
+    "More lengthy work"
+  ],
+  "closingLine": "Eventually, finance teams spend more time chasing receipts than making financial decisions.",
+  "resultLead": "The Result?",
+  "chaosPoint": { "icon": "⚠️", "label": "CHAOS POINT" },
+  "causes": [
+    {
+      "id": "c1",
+      "icon": "🧾",
+      "title": "Receipts Lost",
+      "sub": "Finance teams chase paperwork, not decisions",
+      "tag": "Lengthy Processes",
+      "tagColor": "bg-amber-100 text-amber-600 border-amber-200"
+    },
+    {
+      "id": "c2",
+      "icon": "⏳",
+      "title": "Approval Delays",
+      "sub": "Every claim waits on a manager",
+      "tag": null,
+      "tagColor": ""
+    },
+    {
+      "id": "c3",
+      "icon": "👥",
+      "title": "Reimbursement Queue",
+      "sub": "Growth multiplies the busywork",
+      "tag": "No Policy Enforcement",
+      "tagColor": "bg-violet-100 text-violet-600 border-violet-200"
+    },
+    {
+      "id": "c4",
+      "icon": "👁️‍🗨️",
+      "title": "Visibility Missing",
+      "sub": "No real-time view of company spend",
+      "tag": null,
+      "tagColor": ""
+    }
+  ],
+  "effects": [
+    {
+      "id": "e1",
+      "icon": "⏱️",
+      "title": "Delayed Reimbursements",
+      "badge": "STUCK",
+      "badgeStyle": "bg-slate-100 text-slate-600 border-slate-300",
+      "iconBg": "bg-slate-50",
+      "accentColor": "border-l-slate-400"
+    },
+    {
+      "id": "e2",
+      "icon": "📈",
+      "title": "Budget Overruns",
+      "badge": "CRITICAL",
+      "badgeStyle": "bg-red-100 text-red-700 border-red-300",
+      "iconBg": "bg-red-50",
+      "accentColor": "border-l-red-400"
+    },
+    {
+      "id": "e3",
+      "icon": "🚨",
+      "title": "Expense Fraud",
+      "badge": "HIGH RISK",
+      "badgeStyle": "bg-rose-100 text-rose-700 border-rose-300",
+      "iconBg": "bg-rose-50",
+      "accentColor": "border-l-rose-400"
+    },
+    {
+      "id": "e4",
+      "icon": "😤",
+      "title": "Frustrated Employees",
+      "badge": "BURNOUT",
+      "badgeStyle": "bg-orange-100 text-orange-700 border-orange-300",
+      "iconBg": "bg-orange-50",
+      "accentColor": "border-l-orange-400"
+    },
+    {
+      "id": "e5",
+      "icon": "📉",
+      "title": "Slower business decisions",
+      "badge": "DANGER",
+      "badgeStyle": "bg-rose-100 text-rose-700 border-rose-300",
+      "iconBg": "bg-rose-50",
+      "accentColor": "border-l-rose-500"
+    }
+  ],
+  "stats": [
+    { "value": "38%", "label": "average budget overrun",             "color": "text-rose-600"   },
+    { "value": "3×",  "label": "more time on approvals",            "color": "text-amber-600"  },
+    { "value": "72%", "label": "employees frustrated by delays",     "color": "text-violet-600" }
+  ],
+  "bottomCta": {
+    "heading": "The bigger your business becomes, the more expensive these inefficiencies get.",
+    "subtext": "Every untracked expense compounds. Act before it compounds further.",
+    "buttonLabel": "Upgrade Your Workflow",
+    "buttonHref": "/book-a-demo"
+  }
+}

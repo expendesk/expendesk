@@ -1,0 +1,589 @@
+/* =============================================================================
+ * globals.css — the single source of truth for global CSS in this app.
+ *
+ * Contents, in order:
+ *   1. Tailwind v4 import + base resets (scroll behavior, anchor offsets,
+ *      selection color, tap-highlight, box-sizing).
+ *   2. Navbar underline hover effect.
+ *   3. Component-scoped custom CSS — each block is labelled with the component
+ *      that owns it: SolutionSection / BenefitsSection / LeadMagnetSection /
+ *      TestimonialsSection / ChatWidget / WhyExpendesk (prefixed `eb-`) /
+ *      pharmaceutical SelfAssessmentSection (prefixed `sa-`) /
+ *      pharmaceutical ChecklistIntroSection (prefixed `ck-`) /
+ *      pharmaceutical BridgeSection (prefixed `br-`) /
+ *      pharmaceutical IntroducingExpendeskSection (prefixed `ie-`) /
+ *      pharmaceutical ChecklistContentsSection (prefixed `cc-`) /
+ *      pharmaceutical ChooseNextStepSection (prefixed `cn-`) /
+ *      pharmaceutical FinalCtaSection (prefixed `fc-`).
+ *   4. Blog content typography (scoped under `.blog-content`, plus the
+ *      `.blog-table-scroll` / `.blog-embed` wrappers used by BlogContent).
+ *
+ * Conventions (see README "Styling Rules"):
+ *   - This file is the ONLY place for class definitions and @keyframes.
+ *   - Inline `style={{}}` in components is reserved for runtime-computed values.
+ *   - Every animation here has a `prefers-reduced-motion: reduce` opt-out.
+ * ========================================================================== */
+@import "tailwindcss";
+
+/* =============================================================================
+ * TYPOGRAPHY — Poppins, site-wide.
+ *
+ * The font itself is loaded once in src/app/layout.tsx via `next/font/google`,
+ * which self-hosts it and exposes it as `--font-poppins` on <html>.
+ *
+ * Overriding Tailwind's `--font-sans` here is what makes it apply to
+ * EVERYTHING: Tailwind's preflight sets the document font from this variable,
+ * so every element inherits Poppins without touching a single component, and
+ * the `font-sans` utility resolves to it too.
+ *
+ * The system fonts after it are fallbacks for the brief moment before the
+ * font file lands (and if it ever fails to load).
+ * ========================================================================== */
+@theme {
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Belt-and-braces: set the family on the document root explicitly as well, so
+   the site does not depend on Tailwind's preflight internals staying the same
+   across minor versions. `inherit` on form controls is the part browsers get
+   wrong by default — without it buttons/inputs fall back to the OS UI font. */
+html {
+  font-family: var(--font-sans);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* Smooth scrolling is driven by the JS engine in src/lib/scroll.ts so it can
+   track lazy-loaded sections whose height is still settling. A CSS
+   `scroll-behavior: smooth` here would fight that engine (it turns every
+   per-frame scrollTo into its own animation), so we keep native scrolling
+   instant and let the engine own the smoothness. */
+html {
+  scroll-behavior: auto;
+}
+
+/* Offset anchor scroll targets so they land below the fixed navbar — matches
+   NAVBAR_OFFSET in src/lib/scroll.ts. Used as a fallback for any native jump. */
+section[id],
+div[id] {
+  scroll-margin-top: 90px;
+}
+
+body {
+  background: #050816;
+  color: white;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #6366f1;
+  color: white;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Nav underline hover animation */
+.nav-underline-item {
+  position: relative;
+}
+.nav-underline-item::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 14px;
+  right: 14px;
+  height: 1.5px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 60%, #a78bfa 100%);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.34s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-underline-item:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.nav-cta:focus-visible {
+  outline: 2px solid rgba(99, 102, 241, 0.5);
+  outline-offset: 3px;
+}
+
+/* ─── Custom Scrollbar — SolutionSection diagram ─────────────────────────── */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(124, 58, 237, 0.2);
+  border-radius: 20px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(124, 58, 237, 0.4);
+}
+
+/* ─── BenefitsSection — hide scrollbar in mobile card carousel content ────── */
+.carousel-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── LeadMagnetSection — slow background drift animation ────────────────── */
+@keyframes lm-drift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.lm-bg-drift {
+  animation: lm-drift 30s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lm-bg-drift { animation: none; }
+}
+
+/* ─── TestimonialsSection — infinite marquee rows ────────────────────────── */
+@keyframes expendeskMarqueeLeft  { from { transform: translateX(0%);   } to { transform: translateX(-50%); } }
+@keyframes expendeskMarqueeRight { from { transform: translateX(-50%); } to { transform: translateX(0%);   } }
+.expd-marquee-left  { animation: expendeskMarqueeLeft  linear infinite; }
+.expd-marquee-right { animation: expendeskMarqueeRight linear infinite; }
+.expd-marquee-left,
+.expd-marquee-right {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+@media (prefers-reduced-motion: reduce) {
+  .expd-marquee-left,
+  .expd-marquee-right { animation: none !important; }
+}
+
+/* ─── ChatWidget — message list scrollbar ────────────────────────────────── */
+.chat-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(99, 102, 241, 0.18);
+  border-radius: 20px;
+}
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(99, 102, 241, 0.35);
+}
+
+/* ─── WhyExpendesk — border beam, shimmer, orbs, carousel, skeleton ──────── */
+@keyframes ebRotateNew { to { transform: rotate(360deg); } }
+.eb-beam-new {
+  background: conic-gradient(
+    transparent 0deg,
+    transparent 255deg,
+    rgba(91,33,182,0.06)   263deg,
+    rgba(124,58,237,0.95)  277deg,
+    #a855f7                290deg,
+    #d946ef                303deg,
+    rgba(249,168,212,0.55) 314deg,
+    transparent            324deg
+  );
+  animation: ebRotateNew 5.5s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes ebShimmer {
+  0%   { transform: translateX(-130%) skewX(-20deg); opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: translateX(230%) skewX(-20deg); opacity: 0; }
+}
+.eb-shimmer { position: relative; overflow: hidden; }
+.eb-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 45%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
+  animation: ebShimmer 3.2s ease-in-out 0.8s infinite;
+}
+
+@keyframes ebOrb1 {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  33%  { transform: translate(45px,-30px) scale(1.05); }
+  66%  { transform: translate(-22px,20px) scale(.97); }
+}
+@keyframes ebOrb2 {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  40%  { transform: translate(-38px,26px) scale(1.04); }
+  80%  { transform: translate(20px,-18px) scale(.98); }
+}
+.eb-orb-1 { animation: ebOrb1 16s ease-in-out infinite; }
+.eb-orb-2 { animation: ebOrb2 12s ease-in-out infinite; }
+
+@keyframes ebStarSpin {
+  0%, 100% { transform: rotate(0deg)  scale(1);   }
+  50%       { transform: rotate(18deg) scale(1.18); }
+}
+.eb-star { animation: ebStarSpin 3s ease-in-out infinite; }
+
+.eb-no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.eb-no-scrollbar::-webkit-scrollbar { display: none; }
+
+@keyframes ebSwipeHint {
+  0%, 100% { transform: translateX(0);  opacity: .55; }
+  50%       { transform: translateX(5px); opacity: 1;   }
+}
+.eb-swipe-hint { animation: ebSwipeHint 1.4s ease-in-out infinite; }
+
+.eb-nav-btn { transition: opacity .25s ease, transform .15s ease, box-shadow .25s ease; }
+.eb-nav-btn:active { transform: translateY(-50%) scale(.9); }
+
+.eb-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.eb-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@keyframes ebSkelSweep {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.eb-skel {
+  background-image: linear-gradient(90deg, #EEF0F4 25%, #F5F1FF 37%, #EEF0F4 63%);
+  background-size: 400% 100%;
+  animation: ebSkelSweep 1.5s ease-in-out infinite;
+}
+
+.eb-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eb-beam-new, .eb-shimmer::after, .eb-orb-1, .eb-orb-2,
+  .eb-star, .eb-swipe-hint, .eb-skel
+  { animation: none; }
+}
+
+/* ─── SelfAssessmentSection (pharmaceutical) — animated conic border beam ──
+   Spins a --sa-bb-angle custom property so a conic-gradient ring appears to
+   rotate around the card border. The spin duration is passed per-instance via
+   an inline `animation-duration`; colors are runtime props on the element. */
+@property --sa-bb-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes saBorderBeamSpin {
+  from { --sa-bb-angle: 0deg;   }
+  to   { --sa-bb-angle: 360deg; }
+}
+.sa-border-beam {
+  animation-name: saBorderBeamSpin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sa-border-beam { animation: none; }
+}
+
+/* ─── ChecklistIntroSection (pharmaceutical) — SVG stroke-path border beam ──
+   Travels a dashed segment around a rounded <rect> stroke (uniform speed on any
+   aspect ratio). The keyframe is identical for every instance, so it's shared
+   here; per-card spin duration is passed via an inline `animation-duration`. */
+@keyframes ckBorderBeamTravel {
+  from { stroke-dashoffset: 0;    }
+  to   { stroke-dashoffset: -100; }
+}
+.ck-border-beam {
+  animation-name: ckBorderBeamTravel;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ck-border-beam { animation: none; }
+}
+
+/* ─── BridgeSection (pharmaceutical) — infinite marquee (mobile/tablet) ────
+   The "same challenges" row auto-scrolls one full copy left, then loops. The
+   track renders the cards twice, so translating by -50% (minus the gap) yields
+   a seamless wrap. Pauses on hover/touch. */
+@keyframes brMarquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 0.5rem)); }
+}
+.br-marquee {
+  width: max-content;
+  animation: brMarquee 25s linear infinite;
+}
+.br-marquee:hover,
+.br-marquee:active {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .br-marquee { animation: none; }
+}
+
+/* ─── IntroducingExpendeskSection (pharmaceutical) — hide scrollbar ────────
+   The mobile capability carousel scrolls programmatically; the native
+   scrollbar is hidden so only the cards + progress bars read as the control. */
+.ie-no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.ie-no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── ChecklistContentsSection (pharmaceutical) — masked dot-grid backdrop ──
+   A faint purple dot grid faded out toward the edges with a radial mask, so it
+   only reads near the top-center behind the heading. Static (no animation). */
+.cc-dot-grid {
+  background-image: radial-gradient(circle, #d8b4fe 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 55% at 50% 0%,
+    black 40%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 75% 55% at 50% 0%,
+    black 40%,
+    transparent 100%
+  );
+}
+
+/* ─── ChooseNextStepSection (pharmaceutical) — backdrops + shimmer text ────
+   `cn-dot-grid`      : purple dot grid masked toward centre, behind the header.
+   `cn-dot-grid-dark` : faint white dot grid inside the dark trust capsule.
+   `cn-shimmer-text`  : 200% gradient sizing so ShimmerText can drift its
+                        background-position (animation itself is in the JSX). */
+.cn-dot-grid {
+  background-image: radial-gradient(circle, #d8b4fe 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 30%,
+    black 30%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 30%,
+    black 30%,
+    transparent 100%
+  );
+}
+.cn-dot-grid-dark {
+  background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.cn-shimmer-text {
+  background-size: 200% auto;
+}
+
+/* ─── FinalCtaSection (pharmaceutical) — shimmer text sizing ───────────────
+   200% gradient sizing so ShimmerText can drift its background-position (the
+   animation itself is driven by Framer Motion in the JSX). */
+.fc-shimmer-text {
+  background-size: 200% auto;
+}
+
+/* ─── Blog content typography (BlogContent renderer) ──────────────────────
+   Styles for the block array rendered from the WordPress Blog-to-JSON API.
+   Scoped under .blog-content so it never leaks into the rest of the site. */
+
+.blog-content {
+  --blog-text: #1f2933;
+  --blog-muted: #52606d;
+  --blog-border: #e4e7eb;
+  --blog-accent: #2563eb;
+  --blog-code-bg: #0f172a;
+  --blog-code-text: #e2e8f0;
+
+  color: var(--blog-text);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+/* CMS content is untrusted layout-wise: WordPress authors can attach fixed
+   inline widths to any block (style="width:498px" on figures, images, …).
+   Clamp everything to the column so no post can ever cause horizontal
+   overflow on small screens — desktop rendering is unaffected. */
+.blog-content,
+.blog-content * {
+  max-width: 100%;
+}
+
+.blog-content > * + * {
+  margin-top: 1.25em;
+}
+
+/* Headings ---------------------------------------------------------- */
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  line-height: 1.3;
+  font-weight: 700;
+  scroll-margin-top: 6rem; /* anchor links land below a sticky navbar */
+}
+
+.blog-content h2 { font-size: 1.75rem; margin-top: 2.25em; }
+.blog-content h3 { font-size: 1.375rem; margin-top: 2em; }
+.blog-content h4 { font-size: 1.125rem; margin-top: 1.75em; }
+
+/* Inline ------------------------------------------------------------ */
+.blog-content a {
+  color: var(--blog-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.blog-content a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.blog-content mark {
+  background: #fef08a;
+  padding: 0 0.15em;
+  border-radius: 2px;
+}
+
+.blog-content p code,
+.blog-content li code {
+  background: rgba(15, 23, 42, 0.07);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+
+/* Lists -------------------------------------------------------------- */
+.blog-content ul,
+.blog-content ol {
+  padding-left: 1.5rem;
+}
+
+.blog-content ul { list-style: disc; }
+.blog-content ol { list-style: decimal; }
+
+.blog-content li + li {
+  margin-top: 0.4em;
+}
+
+/* Quote --------------------------------------------------------------- */
+.blog-content blockquote {
+  border-left: 4px solid var(--blog-accent);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  color: var(--blog-muted);
+  font-style: italic;
+}
+
+.blog-content blockquote cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: normal;
+  font-size: 0.875rem;
+}
+
+/* Media --------------------------------------------------------------- */
+.blog-content figure {
+  margin: 2rem 0;
+}
+
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.blog-content figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--blog-muted);
+  text-align: center;
+}
+
+.blog-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.blog-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Code blocks ---------------------------------------------------------- */
+.blog-content pre {
+  background: var(--blog-code-bg);
+  color: var(--blog-code-text);
+  padding: 1.25rem;
+  border-radius: 12px;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.blog-content pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Tables ---------------------------------------------------------------- */
+.blog-table-scroll {
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+.blog-content table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9375rem;
+}
+
+.blog-content th,
+.blog-content td {
+  border: 1px solid var(--blog-border);
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+}
+
+.blog-content th {
+  background: #f5f7fa;
+  font-weight: 600;
+}
+
+/* Separator --------------------------------------------------------------- */
+.blog-content hr {
+  border: 0;
+  border-top: 1px solid var(--blog-border);
+  margin: 3rem 0;
+}

@@ -1,0 +1,167 @@
+{
+  "badge": "The Solution",
+  "hero": {
+    "headline": {
+      "pre": "Meet",
+      "brand": "Expendesk",
+      "sub": "One Platform to Manage Every Business Expense.",
+      "subAccent": "One Platform",
+      "subPost": "to Manage Every Business Expense.",
+      "subPostPre": "to",
+      "subPostSuffix": "Manage Every Business Expense."
+    },
+    "description": "Expendesk centralizes your entire expense management process—from expense submission to reimbursement, approvals, reporting, and compliance.",
+    "bullets": [
+      { "text": "No spreadsheets.",                "positive": false },
+      { "text": "No lengthy follow-ups.",           "positive": false },
+      { "text": "No endless email threads.",                   "positive": false },
+      { "text": "Just complete visibility and control over business spending.", "positive": true  }
+    ],
+    "cta": "See Expendesk in Action",
+    "ctaHref": "/book-a-demo"
+  },
+  "nodeDiagram": {
+    "chaosLabel": "From Chaos",
+    "controlLabel": "To Control",
+    "brandName": "EXPENDESK",
+    "brandTagline": "Financial Control Engine",
+    "brandTaglineParts": ["Financial", "Control Engine"],
+    "chaosNodes": [
+      { "label": "Receipts Lost",       "icon": "🧾" },
+      { "label": "Approval Delays",     "icon": "⏳"  },
+      { "label": "Reimbursement Queue", "icon": "👥" },
+      { "label": "Visibility Missing",  "icon": "👁️‍🗨️"  }
+    ],
+    "controlNodes": [
+      { "label": "Expense Captured Instantly", "icon": "📸" },
+      { "label": "Auto Approval",              "icon": "⚡" },
+      { "label": "Instant Reimbursement",      "icon": "💸" },
+      { "label": "Real-Time Dashboard",        "icon": "📊" }
+    ]
+  },
+  "featuresSection": {
+    "heading": "With Expendesk, You Can:",
+    "headingParts": { "pre": "With ", "brand": "Expendesk", "post": ", You Can:" },
+    "subheading": "Everything your finance team needs, in one place.",
+    "features": [
+      {
+        "iconKey": "camera",
+        "title": "Automate expense claims",
+        "desc": "Upload receipts on the go and never lose a single expense again.",
+        "color": "from-violet-500/10 to-violet-600/5",
+        "iconColor": "text-violet-600",
+        "dot": "bg-violet-500",
+        "border": "hover:border-violet-300/60"
+      },
+      {
+        "iconKey": "refresh",
+        "title": "Speed up employee reimbursements",
+        "desc": "Reimburse employees faster and boost happiness.",
+        "color": "from-emerald-500/10 to-emerald-600/5",
+        "iconColor": "text-emerald-600",
+        "dot": "bg-emerald-500",
+        "border": "hover:border-emerald-300/60"
+      },
+      {
+        "iconKey": "bolt",
+        "title": "Create multi-level approval workflows",
+        "desc": "Set smart approval flows and eliminate lengthy follow-ups.",
+        "color": "from-indigo-500/10 to-indigo-600/5",
+        "iconColor": "text-indigo-600",
+        "dot": "bg-indigo-500",
+        "border": "hover:border-indigo-300/60"
+      },
+      {
+        "iconKey": "users",
+        "title": "Track business spending in real time",
+        "desc": "Get granular visibility by team, department, or location.",
+        "color": "from-violet-500/10 to-violet-600/5",
+        "iconColor": "text-violet-600",
+        "dot": "bg-violet-500",
+        "border": "hover:border-violet-300/60"
+      },
+      {
+        "iconKey": "shield",
+        "title": "Enforce company expense policies",
+        "desc": "Ensure policy compliance before spend, not afterwards.",
+        "color": "from-fuchsia-500/10 to-fuchsia-600/5",
+        "iconColor": "text-fuchsia-600",
+        "dot": "bg-fuchsia-500",
+        "border": "hover:border-fuchsia-300/60"
+      },
+      {
+        "iconKey": "file",
+        "title": "Generate audit-ready reports",
+        "desc": "One-click reports that are compliant, accurate and audit-ready.",
+        "color": "from-indigo-500/10 to-indigo-600/5",
+        "iconColor": "text-indigo-600",
+        "dot": "bg-indigo-500",
+        "border": "hover:border-indigo-300/60"
+      },
+      {
+        "iconKey": "bar-chart",
+        "title": "Gain actionable financial insights",
+        "desc": "Make smarter decisions with real-time spending data.",
+        "color": "from-violet-500/10 to-violet-600/5",
+        "iconColor": "text-violet-600",
+        "dot": "bg-violet-500",
+        "border": "hover:border-violet-300/60"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "iconKey": "bolt",
+      "value": 95,
+      "suffix": "%",
+      "valueText": null,
+      "label": "Less approval time",
+      "sub": "Save hours every week",
+      "color": "text-violet-600"
+    },
+    {
+      "iconKey": "refresh",
+      "value": 70,
+      "suffix": "%",
+      "valueText": null,
+      "label": "Faster reimbursements",
+      "sub": "Employees get paid faster",
+      "color": "text-indigo-600"
+    },
+    {
+      "iconKey": "shield",
+      "value": 100,
+      "suffix": "%",
+      "valueText": null,
+      "label": "Policy compliance",
+      "sub": "Enforced automatically",
+      "color": "text-fuchsia-600"
+    },
+    {
+      "iconKey": "bar-chart",
+      "value": null,
+      "suffix": "",
+      "valueText": "Real-Time",
+      "label": "Financial visibility",
+      "sub": "Always up-to-date",
+      "color": "text-violet-600"
+    }
+  ],
+  "dashboardCta": {
+    "headline": "Ready to Replace Expense Chaos?",
+    "description": "See how Expendesk transforms spending management from reactive to automated.",
+    "buttonLabel": "See Expendesk in Action",
+    "buttonHref": "/book-a-demo"
+  },
+  "dashboardPreview": {
+    "title": "Dashboard",
+    "totalLabel": "Total Spending",
+    "totalSpending": "₹1,55,65,820",
+    "trend": "↑ +12.9% vs last month",
+    "transactions": [
+      { "name": "Cloud Services", "amount": "₹1,02,090.00", "dept": "Engineering", "status": "Approved" },
+      { "name": "Designing",      "amount": "₹28,220.00",   "dept": "Design",      "status": "Approved" },
+      { "name": "Transportation", "amount": "₹4,058.70",    "dept": "Sales",       "status": "Approved" }
+    ]
+  }
+}

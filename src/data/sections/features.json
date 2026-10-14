@@ -1,0 +1,295 @@
+{
+  "featuresVideo": {
+    "badge": "Interactive Product Intelligence",
+    "headline": "Your financial workflow, rendered in motion.",
+    "headlineParts": {
+      "pre": "Your financial workflow,",
+      "accent": "rendered in motion."
+    },
+    "subheading": "Everything You Need to Manage Expenses Efficiently",
+    "browserMockupUrl": "expendesk.com/tour",
+    "featureVideoUrl": "https://youtu.be/ijrI2tlUtZo",
+    "featureVideoMeta": {
+      "name": "Expendesk Product Demo Video",
+      "description": "Get a walkthrough of Expendesk, try it Today.",
+      "uploadDate": "2026-10-05T09:06:30-07:00",
+      "duration": "PT3M4S"
+    },
+    "floatingBadges": [
+      {
+        "id": "badge-capture",
+        "iconKey": "receipt",
+        "title": "Expense Capture",
+        "subtitle": "Submit receipts instantly via mobile, web, or upload.",
+        "color": "violet",
+        "desktopClass": "hidden xl:flex -top-6 right-4 2xl:-right-6",
+        "factor": {
+          "x": -8,
+          "y": -8
+        },
+        "delay": 0.1
+      },
+      {
+        "id": "badge-approval",
+        "iconKey": "git-branch",
+        "title": "Automated Approvals",
+        "subtitle": "Route expenses by team, department, or spend limit.",
+        "color": "emerald",
+        "desktopClass": "hidden xl:flex top-1/2 -translate-y-1/2 -right-6 2xl:-right-12",
+        "factor": {
+          "x": 10,
+          "y": 5
+        },
+        "delay": 0.2
+      },
+      {
+        "id": "badge-reimbursements",
+        "iconKey": "wallet",
+        "title": "Reimbursements",
+        "subtitle": "Track employee payouts with complete transparency.",
+        "color": "blue",
+        "desktopClass": "hidden xl:flex -bottom-6 left-4 2xl:-left-6",
+        "factor": {
+          "x": -6,
+          "y": 10
+        },
+        "delay": 0.3
+      },
+      {
+        "id": "badge-policies",
+        "iconKey": "file-text",
+        "title": "Expense Policies",
+        "subtitle": "Enforce spending rules and approval hierarchies.",
+        "color": "amber",
+        "desktopClass": "hidden xl:flex top-1/2 -translate-y-1/2 -left-6 2xl:-left-12",
+        "factor": {
+          "x": -10,
+          "y": -5
+        },
+        "delay": 0.4
+      }
+    ],
+    "stats": [
+      {
+        "id": "stat-dashboards",
+        "value": "Real-Time",
+        "label": "Dashboards",
+        "sub": "Monitor spending trends & budgets as they happen"
+      },
+      {
+        "id": "stat-analytics",
+        "value": "Reporting",
+        "label": "& Analytics",
+        "sub": "Finance, operations, and leadership teams"
+      },
+      {
+        "id": "stat-integrations",
+        "value": "Accounting",
+        "label": "Integrations",
+        "sub": "Seamlessly connect with existing systems"
+      }
+    ]
+  },
+  "industrySection": {
+    "badge": "Built for Growing Businesses",
+    "headline": "Designed for the Way Modern Businesses Operate.",
+    "headlineParts": {
+      "pre": "Designed for the Way ",
+      "accent": "Modern Businesses Operate."
+    },
+    "subheading": "Whether you're managing field teams, multiple branches, client projects, or distributed workforces, Expendesk adapts to your business.",
+    "featurePills": [
+      "Auto-approvals",
+      "Real-time tracking",
+      "Policy engine",
+      "Audit logs"
+    ],
+    "comingSoon": {
+      "label": "…and more",
+      "subtitle": "Expendesk adapts to any growing business"
+    },
+    "interactionHints": {
+      "mobile": "Tap any industry — details appear below",
+      "desktopMain": "Click an industry",
+      "desktopSub": "— the panel on the right updates instantly"
+    },
+    "industries": [
+      {
+        "id": "pharmaceutical",
+        "iconKey": "pill",
+        "label": "Pharmaceutical Companies",
+        "tagline": "Field-force expenses, compliant",
+        "description": "Manage medical rep travel, field visits, and event spend — with policy checks built for regulated industries.",
+        "stats": [
+          {
+            "value": "100%",
+            "label": "Audit-ready claims"
+          },
+          {
+            "value": "3×",
+            "label": "Faster field claims"
+          }
+        ],
+        "color": "violet",
+        "accentFrom": "#7c3aed",
+        "accentTo": "#a855f7",
+        "glowColor": "rgba(139,92,246,0.18)",
+        "badge": "Most Popular"
+      },
+      {
+        "id": "manufacturing",
+        "iconKey": "factory",
+        "label": "Manufacturing Companies",
+        "tagline": "Plant-to-plant spend control",
+        "description": "Track expenses across plants, warehouses, and procurement teams — every site inside one budget view.",
+        "stats": [
+          {
+            "value": "38%",
+            "label": "Lower overruns"
+          },
+          {
+            "value": "100%",
+            "label": "Site visibility"
+          }
+        ],
+        "color": "amber",
+        "accentFrom": "#d97706",
+        "accentTo": "#fbbf24",
+        "glowColor": "rgba(245,158,11,0.15)",
+        "badge": null
+      },
+      {
+        "id": "fmcg",
+        "iconKey": "package",
+        "label": "FMCG Businesses",
+        "tagline": "High-volume expenses, automated",
+        "description": "Handle high-volume distributor visits, trade promotions, and field sales expenses without spreadsheet chaos.",
+        "stats": [
+          {
+            "value": "10×",
+            "label": "Faster processing"
+          },
+          {
+            "value": "100%",
+            "label": "Receipt capture"
+          }
+        ],
+        "color": "emerald",
+        "accentFrom": "#059669",
+        "accentTo": "#34d399",
+        "glowColor": "rgba(16,185,129,0.15)",
+        "badge": null
+      },
+      {
+        "id": "logistics",
+        "iconKey": "truck",
+        "label": "Logistics Companies",
+        "tagline": "On-the-road spend, tracked live",
+        "description": "Fuel, tolls, and driver allowances captured on the move — reconciled automatically at every hub.",
+        "stats": [
+          {
+            "value": "24/7",
+            "label": "Mobile capture"
+          },
+          {
+            "value": "70%",
+            "label": "Faster reimbursements"
+          }
+        ],
+        "color": "blue",
+        "accentFrom": "#2563eb",
+        "accentTo": "#60a5fa",
+        "glowColor": "rgba(59,130,246,0.15)",
+        "badge": null
+      },
+      {
+        "id": "professional",
+        "iconKey": "users",
+        "label": "Professional Services",
+        "tagline": "Every expense, one place",
+        "description": "Gain full visibility into every business expense — from billable hours to operational overhead.",
+        "stats": [
+          {
+            "value": "5min",
+            "label": "Avg. submission"
+          },
+          {
+            "value": "Live",
+            "label": "Budget tracking"
+          }
+        ],
+        "color": "indigo",
+        "accentFrom": "#4f46e5",
+        "accentTo": "#818cf8",
+        "glowColor": "rgba(79,70,229,0.15)",
+        "badge": null
+      },
+      {
+        "id": "consulting",
+        "iconKey": "briefcase",
+        "label": "Consulting Firms",
+        "tagline": "Client profitability, in focus",
+        "description": "Control client expenses, reimbursements, and project profitability across every engagement.",
+        "stats": [
+          {
+            "value": "60%",
+            "label": "Faster approvals"
+          },
+          {
+            "value": "Zero",
+            "label": "Missed receipts"
+          }
+        ],
+        "color": "rose",
+        "accentFrom": "#e11d48",
+        "accentTo": "#fb7185",
+        "glowColor": "rgba(225,29,72,0.14)",
+        "badge": null
+      },
+      {
+        "id": "healthcare",
+        "iconKey": "heart-pulse",
+        "label": "Healthcare Organizations",
+        "tagline": "Multi-branch spend, unified",
+        "description": "Unify expenses across clinics, departments, and care teams — with approvals that respect your hierarchy.",
+        "stats": [
+          {
+            "value": "100%",
+            "label": "Policy compliance"
+          },
+          {
+            "value": "2×",
+            "label": "Faster closing"
+          }
+        ],
+        "color": "teal",
+        "accentFrom": "#0d9488",
+        "accentTo": "#2dd4bf",
+        "glowColor": "rgba(13,148,136,0.15)",
+        "badge": null
+      },
+      {
+        "id": "retail",
+        "iconKey": "shopping-bag",
+        "label": "Retail Businesses",
+        "tagline": "Every store, one dashboard",
+        "description": "Monitor store-level expenses, petty cash, and vendor payments across every outlet in real time.",
+        "stats": [
+          {
+            "value": "Live",
+            "label": "Store-level view"
+          },
+          {
+            "value": "40%",
+            "label": "Less admin time"
+          }
+        ],
+        "color": "fuchsia",
+        "accentFrom": "#c026d3",
+        "accentTo": "#e879f9",
+        "glowColor": "rgba(192,38,211,0.14)",
+        "badge": null
+      }
+    ]
+  }
+}

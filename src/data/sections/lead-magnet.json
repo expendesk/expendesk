@@ -1,0 +1,31 @@
+{
+  "eyebrow": "FREE GUIDE",
+  "headline": {
+    "plain1": "The",
+    "accent": "Hidden Cost",
+    "plain2": "of Poor Expense Management"
+  },
+  "subheadline": "Discover how growing businesses lose time, money, and productivity through inefficient expense processes—and learn the framework leading organizations use to automate reimbursements and gain complete spend visibility.",
+  "insideLabel": "Inside You'll Learn",
+  "bullets": [
+    "The 7 biggest expense management mistakes",
+    "How to reduce reimbursement delays",
+    "Ways to improve finance productivity",
+    "Best practices for expense approvals",
+    "How automation improves compliance"
+  ],
+  "ctaButton": "Download Free Guide",
+  "ctaNote": "No spam. Actionable insights only.",
+  "pdfUrl": "/downloads/msme-lead-magnet.pdf",
+  "downloadFilename": "MSME-Lead-Magnet.pdf",
+  "bookMeta": {
+    "pages": "24 pages",
+    "format": "PDF",
+    "level": "SME / Mid-Market"
+  },
+  "chartBars": [35, 55, 40, 70, 50, 85, 60],
+  "floatingTags": [
+    { "text": "5,000+ downloads", "dotColor": "green"  },
+    { "text": "12 min read",      "dotColor": "amber"  }
+  ]
+}

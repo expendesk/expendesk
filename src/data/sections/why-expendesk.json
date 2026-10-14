@@ -1,0 +1,89 @@
+{
+  "badge": "Your business deserves better expense management.",
+  "heading": { "lead": "Why Businesses", "highlight": "Choose Expendesk" },
+  "subheading": "Expense Management That Helps Your Business Grow Smarter.",
+  "columns": {
+    "aspect": "Capability",
+    "before": { "label": "Traditional Process", "caption": "The lengthy way" },
+    "after": { "label": "Expendesk", "caption": "Fully in control", "tag": "Recommended" }
+  },
+  "comparisons": [
+    {
+      "id": "admin-work",
+      "aspect": "Reduce Administrative Work",
+      "before": "Repetitive processes",
+      "after": "Automated workflows",
+      "icon": "Workflow",
+      "detail": "Automate repetitive expense processes so finance teams can focus on strategic priorities.",
+      "metric": "90%",
+      "metricLabel": "less lengthy work"
+    },
+    {
+      "id": "employee-experience",
+      "aspect": "Improve Employee Experience",
+      "before": "Slow reimbursements",
+      "after": "Faster payouts",
+      "icon": "Wallet",
+      "detail": "Help employees submit expenses quickly and receive reimbursements faster.",
+      "metric": "3×",
+      "metricLabel": "faster payouts"
+    },
+    {
+      "id": "spend-visibility",
+      "aspect": "Gain Complete Spend Visibility",
+      "before": "Limited visibility",
+      "after": "One real-time dashboard",
+      "icon": "BarChart3",
+      "detail": "Track expenses across teams, departments, projects, and locations from one dashboard.",
+      "metric": "360°",
+      "metricLabel": "spend visibility"
+    },
+    {
+      "id": "financial-control",
+      "aspect": "Improve Financial Control",
+      "before": "Budget overruns",
+      "after": "Proactive monitoring",
+      "icon": "Gauge",
+      "detail": "Monitor spending before it exceeds budgets and identify cost-saving opportunities.",
+      "metric": "24/7",
+      "metricLabel": "budget monitoring"
+    },
+    {
+      "id": "compliance",
+      "aspect": "Strengthen Compliance",
+      "before": "Policy violations",
+      "after": "Built-in enforcement",
+      "icon": "ShieldCheck",
+      "detail": "Ensure every expense follows company policies with built-in approval workflows.",
+      "metric": "99.8%",
+      "metricLabel": "compliance rate"
+    },
+    {
+      "id": "scale",
+      "aspect": "Scale with Confidence",
+      "before": "Growing lengthy effort",
+      "after": "Effortless scaling",
+      "icon": "TrendingUp",
+      "detail": "Support growing teams, multiple offices, and increasing expense volumes without increasing lengthy effort.",
+      "metric": "Zero",
+      "metricLabel": "extra lengthy effort"
+    }
+  ],
+  "cta": {
+    "heading": "Every Expense Tells a Story.",
+    "subheading": "Make Sure Yours Leads to Better Business Decisions.",
+    "body": "Growing businesses shouldn't lose time and money to lengthy expense processes.",
+    "highlights": [
+      "Automate reimbursements",
+      "Improve visibility",
+      "Strengthen financial control",
+      "Scale with confidence"
+    ],
+    "prompt": "Ready to Transform Your Expense Management?",
+    "button": "Book a Free Demo",
+    "buttonHref": "/book-a-demo",
+    "secondaryButton": { "label": "Download the Free Expense Management Guide", "href": "/downloads/msme-lead-magnet.pdf" },
+    "trustPoints": ["No obligation", "No complicated setup"],
+    "note": "Just a smarter way to manage business expenses."
+  }
+}

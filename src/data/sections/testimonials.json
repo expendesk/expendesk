@@ -1,0 +1,61 @@
+{
+  "section": {
+    "badge": {
+      "label": "Customer Stories",
+      "rating": 4.9
+    },
+    "headline": {
+      "plain1": "Businesses Don't Need",
+      "accent1": "More Software.",
+      "plain2": "They Need",
+      "accent2": "More Control."
+    },
+    "bottomCta": {
+      "pre": "Join",
+      "highlight": "100+ Users",
+      "post": "already in control"
+    },
+    "rows": [
+      { "direction": "left",  "duration": 58, "itemIds": ["1","2","3","4","5","6"]   },
+      { "direction": "right", "duration": 50, "itemIds": ["7","8","9","10","11","12"] }
+    ]
+  },
+  "testimonials": [
+    {
+      "id": "1",
+      "quote": "Expendesk eliminated our lengthy reimbursement backlog entirely. Our finance team now closes month-end in half the time — what used to take 3 full days now takes a few hours.",
+      "author": "Rajesh Mehta",
+      "role": "Chief Financial Officer",
+      "company": "TechVista Solutions",
+      "companyType": "IT Services · 200+ employees",
+      "avatar": "RM",
+      "avatarImage": null,
+      "rating": 5,
+      "metric": { "value": "83%", "label": "Faster Month-End" }
+    },
+    {
+      "id": "2",
+      "quote": "The auto-approval workflows alone saved our ops team over 15 hours a week. Expense processing time dropped by more than 70% in our very first month on Expendesk.",
+      "author": "Priya Nair",
+      "role": "Operations Head",
+      "company": "Zenvoy Commerce",
+      "companyType": "E-Commerce · 150+ employees",
+      "avatar": "PN",
+      "avatarImage": null,
+      "rating": 5,
+      "metric": { "value": "3×", "label": "Audit Speed" }
+    },
+    {
+      "id": "3",
+      "quote": "Finally, a platform our finance team and employees actually enjoy using. The UI is clean, approvals happen in seconds, and nothing ever falls through the cracks.",
+      "author": "Arjun Sharma",
+      "role": "Founder & CEO",
+      "company": "BuildForge India",
+      "companyType": "Construction Tech · 80 employees",
+      "avatar": "AS",
+      "avatarImage": null,
+      "rating": 5,
+      "metric": null
+    }
+  ]
+}
